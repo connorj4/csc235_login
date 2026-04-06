@@ -7,13 +7,13 @@
  * @date      2026-02-24
  * @version   1.0
  */
-error_reporting(E_ALL);
+error_reporting(E_ALL); // Report all errors
 ini_set('display_errors', 0); // set to 1 to display errors, 0 to hide them
 
   /* Quick Paths */
   /* note the 2 after __FILE__, because it's 2 directories deep */
-  include_once (realpath(dirname(__FILE__, 2).'/php/session.php'));
-  include_once (realpath(dirname(__FILE__, 2).'/php/path.php'));
+  include_once (realpath(dirname(__FILE__, 2).'/php/session.php')); // Session will be included in header.php
+  include_once (realpath(dirname(__FILE__, 2).'/php/path.php')); // Path will be included in header.php
   // Session will be included in header.php
 
   /* Page Name */
@@ -30,28 +30,28 @@ ini_set('display_errors', 0); // set to 1 to display errors, 0 to hide them
 
   /* Quick Paths */
   /* note the 2 after __FILE__, because it's 2 directories deep */
-  include_once (realpath(dirname(__FILE__, 2).'/php/session.php'));
-  include_once (realpath(dirname(__FILE__, 2).'/php/path.php'));
+  include_once (realpath(dirname(__FILE__, 2).'/php/session.php')); // Session will be included in header.php
+  include_once (realpath(dirname(__FILE__, 2).'/php/path.php')); // Path will be included in header.php
   // Session will be included in header.php
   
   /* Check Role */
-  include_once (ROOT_SRC_PATH .'/check_user.php');
+  include_once (ROOT_SRC_PATH .'/check_user.php'); // Check user role and redirect if not authorized
 
   $user_check = $_SESSION['login_user'];
   // Check user and get roll session from database
 
   /* Page Name */
-  $page_name = "admin";
+  $page_name = "admin"; // Set page name for active link in header
 
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include_once (ROOT_PATH . '/include/head.php'); ?>
+  <?php include_once (ROOT_PATH . '/include/head.php'); // Include head.php ?>
   </head>
   <body class="<?php echo $page_name; ?>">
 
-  <?php include_once (ROOT_PATH . '/include/header.php'); ?>
+  <?php include_once (ROOT_PATH . '/include/header.php'); // Include header.php ?>
     <main role="main" class="container">
 
     <div class="container text-center">
